@@ -423,9 +423,13 @@
 			 		break;
 				}
 			}
+			
 			var above = resultadoSpeed - lastBreakpoint;
 			var missingSpeed = nextBreakpoint - resultadoSpeed;
-
+			console.log(above);
+			if (Number.isNaN(above)) {
+				above = 0;
+			}
 			document.getElementById("resultado").innerHTML = "Speed: " + resultadoSpeed;
 			//document.getElementById("nextBreakpoint").innerHTML =  "Next breakpoint: " + nextBreakpoint;
 			document.getElementById("above").innerHTML = "Points above current breakpoint: " + above;
