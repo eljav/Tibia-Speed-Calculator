@@ -55,19 +55,11 @@
 					<input type="number" style="width: 6rem; display: inline-block;" class="form-control mx-4" id="nivel" value="1" onChange="calcular();">
 				</div>
 			</div>
-			<div class="col-2">
-				<div class="card card-body" style="background-color:green;">
-					<h2 id="resultado">Speed</h2>
-				</div>
-			</div>
-			<div class="col-2">
-				<div class="card card-body" style="background-color:red;">
-					<h2 id="nextBreakpoint">Next</h2>
-				</div>
-			</div>
-			<div class="col-2">
-				<div class="card card-body" style="background-color:blue;">
-					<h2 id="missing">Missing</h2>
+			<div class="col-4">
+				<div class="card card-body" style="background-color: green; display:inline-block;">
+					<h2 id="resultado" style="display:inline-block;">Speed</h2>
+					<h2 id="breakpoint">Breakpoint</h2>
+					<p id="missing">Missing until next breakpoint</p>
 				</div>
 			</div>
 		</div>
@@ -112,8 +104,7 @@
 				</div>
 			</div>
 			<div class="col-4">
-			<div class="card card-body">
-				<div class="col">
+				<div class="card card-body">
 					<h2>Additional speed</h2>
 					<div class="form-check form-switch">
 						<input class="form-check-input speedAdicional" type="checkbox" value="10" onChange="calcular();">
@@ -127,7 +118,9 @@
 							Time Ring
 						</label>
 					</div>
-					<h2 style="display: inline-block;">Food</h2> <i id="popoverData" class="far fa-question-circle" style="vertical-align: text-top;" data-bs-toggle="tooltip" data-bs-placement="right" title="Las comidas anulan los haste modifiers"></i>
+					<div style="display: inline-block;">
+							<h2 style="display: inline-block;">Food</h2> <i id="popoverData" class="far fa-question-circle" style="vertical-align: text-top;" data-bs-toggle="tooltip" data-bs-placement="right" title="Las comidas anulan los haste modifiers"></i>
+						</div>
 					<div class="form-check form-switch">
 						<input class="form-check-input speedAdicional food" type="checkbox" name="foods" id="food1" value="80" onChange="clean('foods', 'food1'); calcular();">
 						<label class="form-check-label" for="flexSwitchCheckChecked">
@@ -146,168 +139,190 @@
 							Filled Jalapeno Peppers
 						</label>
 					</div>
-				</div>
-		<div class="col">
-			<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHelmets" aria-expanded="false" aria-controls="collapseHelmets">
-				<h3>Helmets <img src="images/helmets/Crest_of_the_Deep_Seas.webp"></h3>
-			</button>
-			<div class="collapse" id="collapseHelmets">
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="helmets" id="helmet1" value="5" onChange="clean('helmets', 'helmet1'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Crest of the Deep Seas
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="helmets" id="helmet2" value="20" onChange="clean('helmets', 'helmet2'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Tiara of Power
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="helmets" id="helmet3" value="15" onChange="clean('helmets', 'helmet3'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Werewolf Helmet
-					</label>
+					<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHelmets" aria-expanded="false" aria-controls="collapseHelmets">
+						<h3>Helmets <img src="images/helmets/Crest_of_the_Deep_Seas.webp"></h3>
+					</button>
+					<div class="collapse" id="collapseHelmets">
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="helmets" id="helmet1" value="5" onChange="clean('helmets', 'helmet1'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Crest of the Deep Seas
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="helmets" id="helmet2" value="20" onChange="clean('helmets', 'helmet2'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Tiara of Power
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="helmets" id="helmet3" value="15" onChange="clean('helmets', 'helmet3'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Werewolf Helmet
+							</label>
+						</div>
+					</div>
+					<br/>
+					<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArmors" aria-expanded="false" aria-controls="collapseArmors">
+						<h3>Armors <img src="images/armors/Elite_Draken_Mail.webp"></h3>
+					</button>
+					<div class="collapse" id="collapseArmors">
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor1" value="10" onChange="clean('armors', 'armor1'); calcular();">
+							<label class="form-check-label">
+								Elite Draken Mail
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor2" value="10" onChange="clean('armors', 'armor2'); calcular();">
+							<label class="form-check-label">
+								Swan Feather Cloak
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor3" value="10" onChange="clean('armors', 'armor3'); calcular();">
+							<label class="form-check-label">
+								Zaoan Armor
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor4" value="15" onChange="clean('armors', 'armor4'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Prismatic Armor
+							</label>
+						</div>
+					</div>
+					<br/>
+					<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLegs" aria-expanded="false" aria-controls="collapseLegs">
+						<h3>Legs <img src="images/legs/Alloy_Legs.webp"></h3>
+					</button>
+					<div class="collapse" id="collapseLegs">
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="legs" id="legs1" value="10" onChange="clean('legs', 'legs1'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Alloy Legs
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="legs" id="legs2" value="10" onChange="clean('legs', 'legs2'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Grasshopper Legs
+							</label>
+						</div>
+					</div>
+					<br/>
+					<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBoots" aria-expanded="false" aria-controls="collapseBoots">
+						<h3>Boots <img src="images/boots/Boots_of_Haste.webp"></h3>
+					</button>
+					<div class="collapse" id="collapseBoots">
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots1" value="10" onChange="clean('boots', 'boots1'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Badger Boots
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots2" value="20" onChange="clean('boots', 'boots2'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Boots of Haste
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots3" value="10" onChange="clean('boots', 'boots3'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Cobra Boots
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots4" value="15" onChange="clean('boots', 'boots4'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Draken Boots
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots5" value="15" onChange="clean('boots', 'boots5'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Oriental Shoes
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots6" value="20" onChange="clean('boots', 'boots6'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Pair of Soulstalkers
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots7" value="15" onChange="clean('boots', 'boots7'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Pair of Soulwalkers
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots8" value="15" onChange="clean('boots', 'boots8'); calcular(); ">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Prismatic Boots
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots9" value="30" onChange="clean('boots', 'boots9'); calcular(); ">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Void Boots
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots10" value="15" onChange="clean('boots', 'boots10'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Winged Boots
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots11" value="5" onChange="clean('boots', 'boots11'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Zaoan Shoes
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots12" value="-5" onChange="clean('boots', 'boots12'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Depth Calcei
+							</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots13" value="-6" onChange="clean('boots', 'boots13'); calcular();">
+							<label class="form-check-label" for="flexSwitchCheckChecked">
+								Fur Boots
+							</label>
+						</div>
+					</div>
 				</div>
 			</div>
-			<br/>
-			<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArmors" aria-expanded="false" aria-controls="collapseArmors">
-				<h3>Armors <img src="images/armors/Elite_Draken_Mail.webp"></h3>
-			</button>
-			<div class="collapse" id="collapseArmors">
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor1" value="10" onChange="clean('armors', 'armor1'); calcular();">
-					<label class="form-check-label">
-						Elite Draken Mail
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor2" value="10" onChange="clean('armors', 'armor2'); calcular();">
-					<label class="form-check-label">
-						Swan Feather Cloak
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor3" value="10" onChange="clean('armors', 'armor3'); calcular();">
-					<label class="form-check-label">
-						Zaoan Armor
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="armors" id="armor4" value="15" onChange="clean('armors', 'armor4'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Prismatic Armor
-					</label>
-				</div>
-			</div>
-			<br/>
-			<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLegs" aria-expanded="false" aria-controls="collapseLegs">
-				<h3>Legs <img src="images/legs/Alloy_Legs.webp"></h3>
-			</button>
-			<div class="collapse" id="collapseLegs">
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="legs" id="legs1" value="10" onChange="clean('legs', 'legs1'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Alloy Legs
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="legs" id="legs2" value="10" onChange="clean('legs', 'legs2'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Grasshopper Legs
-					</label>
-				</div>
-			</div>
-			<br/>
-			<button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBoots" aria-expanded="false" aria-controls="collapseBoots">
-				<h3>Boots <img src="images/boots/Boots_of_Haste.webp"></h3>
-			</button>
-			<div class="collapse" id="collapseBoots">
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots1" value="10" onChange="clean('boots', 'boots1'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Badger Boots
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots2" value="20" onChange="clean('boots', 'boots2'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Boots of Haste
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots3" value="10" onChange="clean('boots', 'boots3'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Cobra Boots
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots4" value="15" onChange="clean('boots', 'boots4'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Draken Boots
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots5" value="15" onChange="clean('boots', 'boots5'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Oriental Shoes
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots6" value="20" onChange="clean('boots', 'boots6'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Pair of Soulstalkers
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots7" value="15" onChange="clean('boots', 'boots7'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Pair of Soulwalkers
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots8" value="15" onChange="clean('boots', 'boots8'); calcular(); ">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Prismatic Boots
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots9" value="30" onChange="clean('boots', 'boots9'); calcular(); ">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Void Boots
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots10" value="15" onChange="clean('boots', 'boots10'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Winged Boots
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots11" value="5" onChange="clean('boots', 'boots11'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Zaoan Shoes
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots12" value="-5" onChange="clean('boots', 'boots12'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Depth Calcei
-					</label>
-				</div>
-				<div class="form-check form-switch">
-					<input class="form-check-input speedAdicional" type="checkbox" name="boots" id="boots13" value="-6" onChange="clean('boots', 'boots13'); calcular();">
-					<label class="form-check-label" for="flexSwitchCheckChecked">
-						Fur Boots
-					</label>
+			<div class="col-4">
+				<div class="card card-body">
+					<h2>Terrain</h2>
+					<select class="form-select" aria-label="Default select example" style="width: 12rem; display:inline-block;">
+						<option value="0">Omruc Maze</option>
+						<option value="1">Bridges</option>
+						<option value="2">Oramond Sewer Bridges</option>
+						<option value="3" selected>Town, Depots, etc.</option>
+						<option value="4">Roshamuul Surface</option>
+						<option value="5">Darashia Town</option>
+						<option value="6">Red Planks</option>
+						<option value="7">Hive Structures</option>
+						<option value="8">Dirt Floor</option>
+						<option value="9">Dark Grass</option>
+						<option value="10">Mountain Floor, Deeplings</option>
+						<option value="11">Desert Sand, Snow, etc.</option>
+						<option value="12">Swimming</option>
+						<option value="13">Dirt, Lava</option>
+						<option value="14">Shallow Water, Slime, etc.</option>
+						<option value="15">Underwater</option>
+					</select>
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<img src="images/table.jpg">
 		</div>
-
-	</div>
-		<img src="images/table.jpg">
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
 	</script>
@@ -342,20 +357,27 @@
 			var resultadoSpeed = (69 + parseInt(nivel)) * parseFloat(modificadorHaste) + 40 + parseInt(speedAdicional);
 			resultadoSpeed = resultadoSpeed.toFixed();
 			var nextBreakpoint = 0;
+			var breakpoint;
 			// var friction = [70];
 			//var breakpointsSpeeds = {
 			var	town = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 113, 135, 167, 219, 321, 592, 2382]; // Town, Depots, etc.
 			//}
+			var counter = 0;
 			for (speedLimit of town) {
+				counter++;
 				if (resultadoSpeed < speedLimit) {
+					breakpoint = counter;
 			 		nextBreakpoint = speedLimit;
 			 		break;
 				}
 			}
 			var missingSpeed = nextBreakpoint - resultadoSpeed;
+
 			document.getElementById("resultado").innerHTML = "Speed: " + resultadoSpeed;
-			document.getElementById("nextBreakpoint").innerHTML =  "Next breakpoint: " + nextBreakpoint;
-			document.getElementById("missing").innerHTML = "Missing: " + missingSpeed;
+			//document.getElementById("nextBreakpoint").innerHTML =  "Next breakpoint: " + nextBreakpoint;
+			document.getElementById("missing").innerHTML = "Missing for next breakpoint: " + missingSpeed;
+
+			document.getElementById("breakpoint").innerHTML = "Breakpoint: " + breakpoint;
 		}
 
 		function clean(type, selected) {
