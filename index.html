@@ -51,7 +51,7 @@
 		<div class="row">
 			<div class="col-4">
 				<div class="card card-body" style="display: inline-block;">
-					<h2 style="display: inline-block;">Level</h2>
+					<h2 style="display: inline-block;">Character level</h2>
 					<input type="number" style="width: 6rem; display: inline-block;" class="form-control mx-4" id="nivel" value="1" onChange="calcular();">
 				</div>
 			</div>
@@ -59,7 +59,8 @@
 				<div class="card card-body" style="background-color: green; display:inline-block;">
 					<h2 id="resultado" style="display:inline-block;">Speed</h2>
 					<h2 id="breakpoint">Breakpoint</h2>
-					<h4 id="missing">Missing until next breakpoint</h4>
+					<h5 id="above">Points above current breakpoint</h5>
+					<h5 id="missing">Points missing until next breakpoint</h5>
 				</div>
 			</div>
 		</div>
@@ -362,21 +363,21 @@
 			//var breakpointsSpeeds = {
 			var	town = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 113, 135, 167, 219, 321, 592, 2382]; // Town, Depots, etc.
 			//}
-			var counter = 0;
-			for (speedLimit of town) {
-				counter++;
-				if (resultadoSpeed < speedLimit) {
-					breakpoint = counter;
-			 		nextBreakpoint = speedLimit;
+			for (i = 0; i < town.length; i++) {
+				if (resultadoSpeed < town[i]) {
+					breakpoint = i;
+			 		nextBreakpoint = town[i];
+			 		lastBreakpoint = town[i-1];
 			 		break;
 				}
 			}
+			var above = resultadoSpeed - lastBreakpoint;
 			var missingSpeed = nextBreakpoint - resultadoSpeed;
 
 			document.getElementById("resultado").innerHTML = "Speed: " + resultadoSpeed;
 			//document.getElementById("nextBreakpoint").innerHTML =  "Next breakpoint: " + nextBreakpoint;
-			document.getElementById("missing").innerHTML = "Missing for next breakpoint: " + missingSpeed;
-
+			document.getElementById("above").innerHTML = "Points above current breakpoint: " + above;
+			document.getElementById("missing").innerHTML = "Points missing for next breakpoint: " + missingSpeed;
 			document.getElementById("breakpoint").innerHTML = "Breakpoint: " + breakpoint;
 		}
 
