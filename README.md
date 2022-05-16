@@ -2,4 +2,4 @@
 
 El más completo calculador de velocidad  para Tibia 11
 
-https://eljav.github.io/TibiaSpeedCalculator/
+https://eljav.github.io/tibia-speed-calculator
