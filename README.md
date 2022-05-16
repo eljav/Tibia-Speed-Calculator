@@ -1,4 +1,4 @@
-# Rodrijav Tibia Speed Calculator
+# Rodri & Jav's Tibia Speed Calculator
 
 El más completo calculador de velocidad  para Tibia 11
 
