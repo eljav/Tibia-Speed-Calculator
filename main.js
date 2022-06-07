@@ -22,8 +22,7 @@ function calcular() {
     resultadoSpeed = resultadoSpeed.toFixed();
     var nextBreakpoint = 0;
     var breakpoint;
-    // var friction = [70];
-    //var breakpointsSpeeds = {
+    var maxSpeed = false;
     var	tiles = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 142, 200, 342, 1070], // Omruc Maze
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 147, 192, 278, 499, 1842], // Bridges
@@ -44,26 +43,33 @@ function calcular() {
     ];
     var tile = document.getElementById("tile").value;
     var tileActivo = tiles[tile];
-    for (i = 0; i < tileActivo.length ; i++ ) {
+    for (i = 0; i <= tileActivo.length; i++ ) {
         if (resultadoSpeed < tileActivo[i]) {
             breakpoint = i;
-             nextBreakpoint = tileActivo[i];
-             lastBreakpoint = tileActivo[i-1];
-             break;
+            console.log(breakpoint);
+            nextBreakpoint = tileActivo[i];
+            lastBreakpoint = tileActivo[i-1];
+            break;
+        }
+        if (i == 16) {
+            breakpoint = 17;
+            maxSpeed = true;
+            lastBreakpoint = tileActivo[i-1]
         }
     }
     
     var above = resultadoSpeed - lastBreakpoint;
     var missingSpeed = nextBreakpoint - resultadoSpeed;
-    console.log(above);
     if (Number.isNaN(above)) {
         above = 0;
     }
+    if (maxSpeed) {
+        missingSpeed = 0;
+    }
     document.getElementById("resultado").innerHTML = "Speed: " + resultadoSpeed;
-    //document.getElementById("nextBreakpoint").innerHTML =  "Next breakpoint: " + nextBreakpoint;
+    document.getElementById("breakpoint").innerHTML = "Breakpoint: " + breakpoint;
     document.getElementById("above").innerHTML = "Points above current breakpoint: " + above;
     document.getElementById("missing").innerHTML = "Points missing for next breakpoint: " + missingSpeed;
-    document.getElementById("breakpoint").innerHTML = "Breakpoint: " + breakpoint;
 }
 
 function clean(type, selected) {
