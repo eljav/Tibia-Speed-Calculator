@@ -1,0 +1,46 @@
+@font-face {
+    font-family: martel;
+    src: url("font/martel.ttf");
+}
+body {
+    background-color: #404040;
+}
+
+h1 {
+    font-family: martel;
+    color: orange;
+    font-size: 80px;
+    text-align: center;
+}
+
+h3 {
+    text-align:left;
+}
+.card {
+    margin-bottom: 6px;
+}
+.card-body {
+    background-color: #808080;
+}
+.radio {
+    margin-top: 10px;
+}
+.btn {
+    text-decoration: none;
+    color: black;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+.btn-link:hover,
+.btn-link:focus {
+    text-decoration: none;
+    border: none;
+    outline: none !important;
+    box-shadow: none;
+}
+
+.character-level {
+    width: 6rem;
+    display: inline-block;
+}
